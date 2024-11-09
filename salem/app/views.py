@@ -26,6 +26,35 @@ class RoleType(Enum):
     DEAD = "dead"
 
 
+ROLE_LIMITS = {
+    RoleType.INVESTIGATOR: 2,
+    RoleType.LOOKOUT: 4,
+    RoleType.SHERIFF: 2,
+    RoleType.POTION_MASTER: 1,
+}
+
+
+class Player:
+    # store map of role to number of players
+    ROLE_TO_PLAYERS: dict[RoleType, list[str]] = {
+        RoleType.INVESTIGATOR: [],
+        RoleType.LOOKOUT: [],
+        RoleType.SHERIFF: [],
+        RoleType.POTION_MASTER: [],
+    }
+
+    def __init__(self, username: str):
+        self.username = username
+        self.role = None
+
+    def attempt_assign_role(self, role: RoleType):
+        if len(Player.ROLE_TO_PLAYERS[role]) >= ROLE_LIMITS[role]:
+            return False
+        Player.ROLE_TO_PLAYERS[role].append(self.username)
+        self.role = role
+        return True
+
+
 class Role:
     def __init__(self, name: str, description: str):
         self.name = name
@@ -51,3 +80,22 @@ def add_client(request) -> HttpResponse:
 @require_GET
 def get_clients_size(request):
     return JsonResponse({"clients_size": Clients.get_size()})
+
+
+@require_POST
+def attempt_assign_role(request):
+    form = request.POST
+
+    username = form.get("username")
+    role = form.get("role")
+
+    if not Player.attempt_assign_role(username, role):
+        return HttpResponse(status=400)
+    return HttpResponse(status=200)
+
+
+def main(request):
+    # Get user
+    username = request.session.get("username")
+
+    return render(request, "app/main.html")
