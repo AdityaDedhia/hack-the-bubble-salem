@@ -1,0 +1,64 @@
+{
+    "roles": [
+      {
+        "name": "Investigator",
+        "team": "Town: Get rid of the Mafia and serial killer",
+        "description": "You are the investigator, you have the ability to investigate a player at night, the investigation would return 3 possible roles, one being true and others being false."
+      },
+      {
+        "name": "Lookout",
+        "team": "Town: Get rid of the Mafia and serial killer",
+        "description": "You are the lookout, you have the ability to spy on someone's home, it will allow you to see who visited their house."
+      },
+      {
+        "name": "Sheriff",
+        "team": "Town: Get rid of the Mafia and serial killer",
+        "description": "You are the Sheriff, you have the ability to investigate a player, the investigation would return either not suspisious or suspisious"
+      },
+      {
+        "name": "Potion Master",
+        "team": "Town: Get rid of the Mafia and serial killer",
+        "description": "You are the master of potions, you have the ability to use potions, you have 1 poison potion to kill and 3 healing potions to save someone or yourself once."
+      },
+      {
+        "name": "Whisperer",
+        "team": "Town: Get rid of the Mafia and serial killer",
+        "description": "You are a physcic medium, you have the ability to communicate with the dead at night."
+      },
+      {
+        "name": "Escort",
+        "team": "Town: Get rid of the Mafia and serial killer",
+        "description": "You are the escort of the town, you are able to occupy someone at night, stopping them from doing an action."
+      },
+      {
+        "name": "Mafiaso",
+        "team": "Mafia: Get Rid of all the townsfolks and deranged serial killer",
+        "description": "You are the Mafiaso of the mafia gang, you are responsible for executing the orders of the mafia"
+      },
+      {
+        "name": "Framer",
+        "team": "Mafia: Get Rid of all the townsfolks and deranged serial killer",
+        "description": "You are the Framer of the mafia gang, you have the ability to frame a player and make them suspisous."
+      },
+      {
+        "name": "Disguiser",
+        "team": "Mafia: Get Rid of all the townsfolks and deranged serial killer",
+        "description": "You are the disguiser of the mafia gang, you have the ability to disguise as a different role and prevent unwanted attention from the sheriff and investigator."
+      },
+      {
+        "name": "Serial Killer",
+        "team": "Self: Kill all townsfolk and mafia members",
+        "description": "You are the crazy serial killer, you have the ability to kill anyone at night."
+      },
+      {
+        "name": "Survivor",
+        "team": "Self: Survive until a party wins",
+        "description": "You are the survivor, you main objective is to survive."
+      },
+      {
+        "name": "Jester",
+        "team": "Self: You have lost hope in life, you wish to be hanged by the townsfolk",
+        "description": "You are the jester, after one too many a failed comedy actm you have become the joke, and you wish to have the last laugh."
+    ]
+  }
+  
