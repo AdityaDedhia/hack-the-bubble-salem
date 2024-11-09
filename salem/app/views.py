@@ -3,9 +3,13 @@ from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse, JsonResponse
 from django.views.decorators.http import require_POST, require_GET
 
+import time
+import threading
+
 
 class Clients:
     clients: list[str] = []
+    last_clients_ping: dict[str, float] = {}
 
     @staticmethod
     def add_client(client):
@@ -14,6 +18,27 @@ class Clients:
     @staticmethod
     def get_size():
         return len(Clients.clients)
+
+    @staticmethod
+    def last_client_ping(username: str):
+        Clients.last_clients_ping[username] = time.time()
+
+    @staticmethod
+    def checkUsersActive():
+        """Will be called every 10 seconds to check if all added users are still active."""
+        for client in Clients.clients[
+            :
+        ]:  # Create a copy to avoid modification during iteration
+            if time.time() - Clients.last_clients_ping.get(client, 0) > 10:
+                Clients.clients.remove(client)
+
+        # Schedule the next run in 10 seconds
+        timer = threading.Timer(10.0, Clients.checkUsersActive)
+        timer.daemon = True  # Allow the thread to be killed when the main program exits
+        timer.start()
+
+    def __init__(self):
+        Clients.checkUsersActive()  # initial recursive call
 
 
 class RoleType(Enum):
@@ -63,6 +88,11 @@ class Role:
 
 def home(request) -> HttpRequest:
     return render(request, "app/home.html")
+
+
+def check_user(request) -> HttpResponse:
+    """Make sure added user still active."""
+    username = request.session.get("username")
 
 
 @require_POST

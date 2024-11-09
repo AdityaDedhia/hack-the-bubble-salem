@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salem - Role Selection</title>
+    <link rel="stylesheet" href="../static/css/dist/styles.css">
+</head>
+<body class="bg-gray-900 min-h-screen p-8">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-4xl font-bold text-white mb-8 text-center">Choose Your Role</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Investigator Card -->
+            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <div class="h-48 overflow-hidden">
+                    <img src="/static/images/investigator.jpg" alt="Investigator" 
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold text-white mb-2">Investigator</h2>
+                    <p class="text-gray-400 mb-4">Investigate other players to determine their possible roles.</p>
+                    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
+                            onclick="selectRole('investigator')">
+                        Select Role
+                    </button>
+                </div>
+            </div>
+
+            <!-- Lookout Card -->
+            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <div class="h-48 overflow-hidden">
+                    <img src="/static/images/lookout.jpg" alt="Lookout" 
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold text-white mb-2">Lookout</h2>
+                    <p class="text-gray-400 mb-4">Watch who visits your target during the night.</p>
+                    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
+                            onclick="selectRole('lookout')">
+                        Select Role
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sheriff Card -->
+            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <div class="h-48 overflow-hidden">
+                    <img src="/static/images/sheriff.jpg" alt="Sheriff" 
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold text-white mb-2">Sheriff</h2>
+                    <p class="text-gray-400 mb-4">Interrogate suspects to find suspicious activities.</p>
+                    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
+                            onclick="selectRole('sheriff')">
+                        Select Role
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
