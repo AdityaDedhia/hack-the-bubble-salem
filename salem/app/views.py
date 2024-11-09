@@ -86,9 +86,8 @@ def get_clients_size(request):
 def attempt_assign_role(request):
     form = request.POST
 
-    username = form.get("username")
     role = form.get("role")
-
+    username = request.session.get("username")
     if not Player.attempt_assign_role(username, role):
         return HttpResponse(status=400)
     return HttpResponse(status=200)
