@@ -3,6 +3,7 @@ const mainContainer = document.getElementById('main-container');
 let formDiv = document.getElementById('form-div');
 let usernameForm = document.getElementById('username-form');
 const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+let previousClientSize = 0;
 
 joinGameButton.addEventListener('click', () => {
     joinGameButton.classList.toggle('hidden');
@@ -25,24 +26,42 @@ usernameForm.addEventListener('submit', async (event) => {
     });
 
     mainContainer.innerHTML = "";
+
     const waitingMessage = document.createElement('div');
-    waitingMessage.innerHTML = `<h1 data-aos="fade-in" class="font-bold text-3xl text-slate-50 text-center mt-10 p-2 rounded-2xl max-w-fit" style="font-family: HeaderFont, sans-serif">Waiting for other players to join</h1>`
+    waitingMessage.innerHTML = `
+    <h1 data-aos="fade-in" class="font-bold text-3xl text-slate-50 text-center mt-10 p-2 rounded-2xl max-w-fit" style="font-family: HeaderFont, sans-serif">Waiting for other players to join</h1>
+    <h2 id="clientSize" class="font-bold text-3xl text-slate-50 text-center mt-10 p-2 rounded-2xl max-w-fit">Test</h2>
+`
+    fetchClientSize();
     mainContainer.appendChild(waitingMessage);
-    fetch('/get_clients_size')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
 });
 
+function fetchClientSize() {
+    fetch('/get_clients_size', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+        .then(response => response.json())
+        .then(data => {
+            // If the client size has changed, update it
+            console.log(data);
+            updateUI(data.clients_size);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+// Function to update the UI with the new client size
+function updateUI(clientSize) {
+    const resultElement = document.getElementById('clientSize');
+    resultElement.textContent = `Current Client Size: ${clientSize}/12`;
+}
+
+// Set the interval to call fetchClientSize every 5 seconds (5000ms)
+setInterval(fetchClientSize, 5000);
 
 
 
