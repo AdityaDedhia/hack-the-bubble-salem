@@ -5,11 +5,12 @@ from django.views.decorators.http import require_POST, require_GET
 
 import time
 import threading
+from datetime import datetime
 
 
 class Clients:
     clients: list[str] = []
-    last_clients_ping: dict[str, float] = {}
+    last_clients_ping: dict[str, datetime] = {}
 
     @staticmethod
     def add_client(client):
@@ -92,7 +93,8 @@ def home(request) -> HttpRequest:
 
 def check_user(request) -> HttpResponse:
     """Make sure added user still active."""
-    username = request.session.get("username")
+    username = str(request.session.get("username"))
+    Clients.last_clients_ping[username] = datetime.now()
 
 
 @require_POST

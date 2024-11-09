@@ -4,6 +4,16 @@ let formDiv = document.getElementById('form-div');
 let usernameForm = document.getElementById('username-form');
 const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 let previousClientSize = 0;
+const playerLimit = 12;
+
+setInterval(()=>{
+    fetch('check_user',{
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+}, 10000)
 
 joinGameButton.addEventListener('click', () => {
     joinGameButton.classList.toggle('hidden');
@@ -30,7 +40,7 @@ usernameForm.addEventListener('submit', async (event) => {
     const waitingMessage = document.createElement('div');
     waitingMessage.innerHTML = `
     <h1 data-aos="fade-in" class="font-bold text-3xl text-slate-50 text-center mt-10 p-2 rounded-2xl max-w-fit" style="font-family: HeaderFont, sans-serif">Waiting for other players to join</h1>
-    <h2 id="clientSize" class="font-bold text-3xl text-slate-50 text-center mt-10 p-2 rounded-2xl max-w-fit">Test</h2>
+    <h2 id="clientSize" class="font-bold text-3xl text-slate-50 text-center mt-2 p-2 rounded-2xl max-w-fit">Test</h2>
 `
     fetchClientSize();
     mainContainer.appendChild(waitingMessage);
@@ -46,8 +56,10 @@ function fetchClientSize() {
         .then(response => response.json())
         .then(data => {
             // If the client size has changed, update it
-            console.log(data);
             updateUI(data.clients_size);
+            if (data.clients_size == playerLimit){
+                window.location.href = "/main"
+            }
         })
         .catch(error => {
             console.error('Error:', error);
