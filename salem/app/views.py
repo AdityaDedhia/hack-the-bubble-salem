@@ -43,7 +43,7 @@ def add_client(request) -> HttpResponse:
     username = form.get("username")
     # store anonymous user
     request.session["username"] = username
-    Clients.add_client(request.user)
+    Clients.add_client(username)
     print("Amount of clients: ", len(Clients.clients))
     return HttpResponse(status=200)
 
