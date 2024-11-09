@@ -41,8 +41,15 @@ INSTALLED_APPS = [
     'app', #main app
     'tailwind',
     'theme',
-    'django_browser_reload'
+    'django_browser_reload',
+    'channels'
 ]
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
+    },
+}
 
 TAILWIND_APP_NAME = 'theme'
 
