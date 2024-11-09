@@ -4,7 +4,7 @@ let formDiv = document.getElementById('form-div');
 let usernameForm = document.getElementById('username-form');
 const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 let previousClientSize = 0;
-const playerLimit = 12;
+const playerLimit = 1;
 
 setInterval(()=>{
     fetch('check_user',{
@@ -13,7 +13,7 @@ setInterval(()=>{
             'Content-Type': 'application/json',
         }
     })
-}, 10000)
+}, 3000)
 
 joinGameButton.addEventListener('click', () => {
     joinGameButton.classList.toggle('hidden');

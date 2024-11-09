@@ -7,13 +7,16 @@
     <link rel="stylesheet" href="../static/css/dist/styles.css">
 </head>
 <body class="bg-gray-900 min-h-screen p-8">
+
+
+role {{ role }}
     <div class="max-w-7xl mx-auto">
         <h1 class="text-4xl font-bold text-white mb-8 text-center">Choose Your Role</h1>
         {% csrf_token %}
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
             <!-- Investigator Card -->
-            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div id="investigator/div" class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <div class="h-48 overflow-hidden">
                     <img src="../static/img/investigator.jpeg" alt="Investigator"
                          class="w-full h-full object-cover">
@@ -29,7 +32,7 @@
             </div>
 
             <!-- Lookout Card -->
-            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div id="lookout-div" class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <div class="h-48 overflow-hidden">
                     <img src="../static/img/lookout.jpeg" alt="Lookout"
                          class="w-full h-full object-cover">
@@ -45,7 +48,7 @@
             </div>
 
             <!-- Sheriff Card -->
-            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div id="sheriff/div" class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <div class="h-48 overflow-hidden">
                     <img src="../static/img/Sheriff.jpeg" alt="Sheriff"
                          class="w-full h-full object-cover">
@@ -61,7 +64,7 @@
             </div>
 
             <!-- Escort Card -->
-            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div id="escort/div" class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <div class="h-48 overflow-hidden">
                     <img src="../static/img/Escort.jpeg" alt="Escort"
                          class="w-full h-full object-cover">
@@ -77,7 +80,7 @@
             </div>
 
             <!-- Medium Card -->
-            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div id="medium/div" class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <div class="h-48 overflow-hidden">
                     <img src="../static/img/Whisperer.jpeg" alt="Medium"
                          class="w-full h-full object-cover">
@@ -93,7 +96,7 @@
             </div>
 
             <!-- Disguiser Card -->
-            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div id="disguiser/div" class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <div class="h-48 overflow-hidden">
                     <img src="../static/img/Disguiser.jpeg" alt="Disguiser"
                          class="w-full h-full object-cover">
