@@ -1,0 +1,49 @@
+Out of 10 	Originality (we are making a modern version of an old game, we better do a good enough job to redesign it, or pray they don’t know the game existed in the first place)
+Out of 10	Quality of the project (we have 8 hours, wat)
+Out of 10	Presentation (we are cs students, we’re cooked)
+
+GENERAL Win Condition
+	Get rid of the mafia
+	Get rid of the serial killer
+2 Investigator
+	Comes up with possible roles that someone could be 
+4 Lookout
+	Watches a player and checks who visited them that night
+2 Sheriff
+	Checks someone and see if they come up as suspicious or not
+	(Identifies team type: town, mafia, neutral)
+2 Potion Master – has a potion to kill or heal
+	Has 1 potion to kill
+	Has 3 potions to heal others (but themselves only once)
+	
+0 Medium
+	Talks with the dead at night, doesn’t identify anyone in specific in dead, everyone just talks 	through “dead:” label
+1 Escort
+	Block someone from performing their action at night
+
+GENERAL Win Condition
+	Get rid of the town
+	Get rid of the serial killer
+Group Ability
+	Can communicate at night
+	Can vote at night on who to kill
+	If the mafioso dies, either the framer or disguiser becomes the mafioso at random
+2 Mafioso
+	Carries out the murder
+3 Framer
+	Makes someone come up as suspicious 
+3 Disguiser
+	Disguises as a certain players role 
+
+
+2 Serial Killer
+	GENERAL Win condition: get rid of the town and mafia
+	Chooses someone to kill each night
+
+2 Survivor
+	INDIVIDUAL Win condition: survive until one team wins (town, mafia, serial killer)
+	Ability: protect yourself at night up to 3 times out of the whole game
+
+0 Jester
+	INDIVIDUAL Win condition: be voted out
+	Ability: kill one of the people who voted you out at night
