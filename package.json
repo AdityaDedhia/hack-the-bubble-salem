@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  },
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./salem/salem/static/css/tailwind.css -o ./salem/salem/static/css/output.css  --watch"
+  }
+}
