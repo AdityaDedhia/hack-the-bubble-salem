@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,18 +9,19 @@
 <body class="bg-gray-900 min-h-screen p-8">
     <div class="max-w-7xl mx-auto">
         <h1 class="text-4xl font-bold text-white mb-8 text-center">Choose Your Role</h1>
-
+        {% csrf_token %}
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
             <!-- Investigator Card -->
             <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <div class="h-48 overflow-hidden">
-                    <img src="/static/images/investigator.jpg" alt="Investigator" 
+                    <img src="../static/img/investigator.jpeg" alt="Investigator"
                          class="w-full h-full object-cover">
                 </div>
                 <div class="p-6">
                     <h2 class="text-2xl font-bold text-white mb-2">Investigator</h2>
                     <p class="text-gray-400 mb-4">Investigate other players to determine their possible roles.</p>
-                    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
+                    <button id="investigator" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
                             onclick="selectRole('investigator')">
                         Select Role
                     </button>
@@ -31,13 +31,13 @@
             <!-- Lookout Card -->
             <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <div class="h-48 overflow-hidden">
-                    <img src="/static/images/lookout.jpg" alt="Lookout" 
+                    <img src="../static/img/lookout.jpeg" alt="Lookout"
                          class="w-full h-full object-cover">
                 </div>
                 <div class="p-6">
                     <h2 class="text-2xl font-bold text-white mb-2">Lookout</h2>
                     <p class="text-gray-400 mb-4">Watch who visits your target during the night.</p>
-                    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
+                    <button id="lookout" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
                             onclick="selectRole('lookout')">
                         Select Role
                     </button>
@@ -47,14 +47,62 @@
             <!-- Sheriff Card -->
             <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <div class="h-48 overflow-hidden">
-                    <img src="/static/images/sheriff.jpg" alt="Sheriff" 
+                    <img src="../static/img/Sheriff.jpeg" alt="Sheriff"
                          class="w-full h-full object-cover">
                 </div>
                 <div class="p-6">
                     <h2 class="text-2xl font-bold text-white mb-2">Sheriff</h2>
                     <p class="text-gray-400 mb-4">Interrogate suspects to find suspicious activities.</p>
-                    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
+                    <button id="sheriff" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
                             onclick="selectRole('sheriff')">
+                        Select Role
+                    </button>
+                </div>
+            </div>
+
+            <!-- Escort Card -->
+            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <div class="h-48 overflow-hidden">
+                    <img src="../static/img/Escort.jpeg" alt="Escort"
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold text-white mb-2">Escort</h2>
+                    <p class="text-gray-400 mb-4">Distract players and prevent them from using their abilities.</p>
+                    <button id="escort" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
+                            onclick="selectRole('escort')">
+                        Select Role
+                    </button>
+                </div>
+            </div>
+
+            <!-- Medium Card -->
+            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <div class="h-48 overflow-hidden">
+                    <img src="../static/img/Whisperer.jpeg" alt="Medium"
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold text-white mb-2">Medium</h2>
+                    <p class="text-gray-400 mb-4">Speak to the dead and uncover hidden information.</p>
+                    <button id="medium" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
+                            onclick="selectRole('medium')">
+                        Select Role
+                    </button>
+                </div>
+            </div>
+
+            <!-- Disguiser Card -->
+            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <div class="h-48 overflow-hidden">
+                    <img src="../static/img/Disguiser.jpeg" alt="Disguiser"
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold text-white mb-2">Disguiser</h2>
+                    <p class="text-gray-400 mb-4">Assume another player's identity to deceive others.</p>
+                    <button id="disguiser" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
+                            onclick="selectRole('disguiser')">
                         Select Role
                     </button>
                 </div>
@@ -62,4 +110,5 @@
         </div>
     </div>
 </body>
+<script src="../static/js/roleSelector.js" ></script>
 </html> 

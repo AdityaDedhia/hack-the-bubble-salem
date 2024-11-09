@@ -46,7 +46,7 @@ class RoleType(Enum):
     INVESTIGATOR = "investigator"
     LOOKOUT = "lookout"
     SHERIFF = "sheriff"
-    POTION_MASTER = "potion_master"
+    DISGUISER = "disguiser"
     ESCORT = "escort"
     MEDIUM = "medium"
     DEAD = "dead"
@@ -56,7 +56,7 @@ ROLE_LIMITS = {
     RoleType.INVESTIGATOR: 2,
     RoleType.LOOKOUT: 4,
     RoleType.SHERIFF: 2,
-    RoleType.POTION_MASTER: 1,
+    RoleType.DISGUISER: 1,
 }
 
 
@@ -66,7 +66,7 @@ class Player:
         RoleType.INVESTIGATOR: [],
         RoleType.LOOKOUT: [],
         RoleType.SHERIFF: [],
-        RoleType.POTION_MASTER: [],
+        RoleType.DISGUISER: [],
     }
 
     def __init__(self, username: str):
