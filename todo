@@ -1,0 +1,12 @@
+WEB DESIGN
+    Display a role object from the roles.json inside a card for the player to see. 
+    Decide if you're doing a mobile design or not, since the screen can easily get cluttered, we might want to instruct people to connect via PC and NOT mobile
+
+    Get the list of usernames from each connections from the server and display in another card 
+        The list should only display the usernames of alive players
+        Next to their names should be a hidden space for buttons to load
+            In day, display a vote button in that space once the voting phase has begun
+            Once someone has made their plea after being voted, display guilty and innocent in the beginning of the screen
+            In night, all roles that have a night ability, display a select button in that space
+
+
