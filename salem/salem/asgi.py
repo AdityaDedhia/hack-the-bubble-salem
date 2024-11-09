@@ -1,5 +1,5 @@
 """
-ASGI config for salem project.
+ASGI config for salem project. tests git
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
